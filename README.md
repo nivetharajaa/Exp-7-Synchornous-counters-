@@ -90,60 +90,46 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 
 ### PROGRAM 
-/*
+
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
 
 Developed by:A.NIVETHA 
 
 RegisterNumber:212222230101  
-*/
+
 ### UPCOUNTER:
+```
+UPCOUNTER:
 
-module upcounter(A,clk);
-
-output reg [3:0]A;
-
+module Counters(clk,A);
 input clk;
-
-always@(posedge clk)
-
+output reg [3:0]A;
+always @(posedge clk)
 begin
-
-A[0]=((((A[1])&(A[2]))&A[3])^A[0]);
-
-A[1]=(((A[2])&(A[3]))^A[1]);
-
-A[2]=((A[3])^A[2]);
-
-A[3]=1^A[3];
-
+	A[3]=(((A[0])&(A[1])&(A[2]))^A[3]);
+	A[2]=(((A[0])&(A[1]))^A[2]);
+	A[1]=(A[0])^A[1];
+	A[0]=A[0]^1;
 end
-
 endmodule
+
+```
 ### DOWNCOUNTER:
-
-module downcounter(A,clk);
-
-output reg [3:0]A;
-
+```
+module dCounters(clk,A);
 input clk;
-
+output reg [3:0]A;
 always@(posedge clk)
-
 begin
-
-A[3]=((((~A[2])&(~A[1]))&(~A[0]))^A[3]);
-
-A[2]=(((~A[1])&(~A[0]))^A[2]);
-
-A[1]=((~A[0])^A[1]);
-
-A[0]=1^A[0];
-
+	A[3]=(((~A[0])&(~A[1])&(~A[2]))^A[3]);
+	A[2]=(((~A[0])&(~A[1]))^A[2]);
+	A[1]=(~A[0])^A[1];
+	A[0]=1^A[0];
 end
-
 endmodule
 
+
+```
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
 ### Upcounter RTL:
 ![277364472-39126810-9e18-4733-81dc-2bf042a1c6c9](https://github.com/nivetharajaa/Exp-7-Synchornous-counters-/assets/120543388/6bfe0172-a986-40d8-9919-ec8fc244daa4)
