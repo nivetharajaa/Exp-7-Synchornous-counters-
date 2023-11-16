@@ -1,9 +1,9 @@
 # Exp-6-Synchornous-counters - up counter and down counter 
-### AIM: 
+## AIM: 
 To implement 4 bit up and down counters and validate  functionality.
-### HARDWARE REQUIRED:  
+## HARDWARE REQUIRED:  
 PC, Cyclone II , USB flasher
-### SOFTWARE REQUIRED:   
+## SOFTWARE REQUIRED:   
 Quartus prime
 ### THEORY 
 
